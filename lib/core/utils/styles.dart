@@ -58,7 +58,14 @@ abstract class Styles {
     height: 1.67,
     letterSpacing: 0.06,
   );
-
+  static const TextStyle textSemiBold14 = TextStyle(
+    color: Color(0xFF4C4E55),
+    fontSize: 14,
+    fontFamily: 'Mulish',
+    fontWeight: FontWeight.w600,
+    height: 1.57,
+    letterSpacing: 0.07,
+  );
   static const TextStyle textBold14 = TextStyle(
     color: Color(0xFF4C4E55),
     fontSize: 14,

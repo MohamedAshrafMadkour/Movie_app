@@ -54,14 +54,9 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Hello from Flutter`
-  String get hello {
-    return Intl.message(
-      'Hello from Flutter',
-      name: 'hello',
-      desc: '',
-      args: [],
-    );
+  /// `Streamview`
+  String get main {
+    return Intl.message('Streamview', name: 'main', desc: '', args: []);
   }
 
   /// `Hello from Flutter 2`

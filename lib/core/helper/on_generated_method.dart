@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/features/on_boarding/presentation/view/onboarding_view.dart';
+import 'package:movie_app/features/splash/presentation/view/splash_view.dart';
 
 MaterialPageRoute onGeneratedRoute(RouteSettings settings) {
   switch (settings.name) {
-    case 'splash_view':
-      return MaterialPageRoute(builder: (context) => Container());
-
+    case SplashView.routeName:
+      return MaterialPageRoute(builder: (context) => SplashView());
+    case OnboardingView.routeName:
+      return MaterialPageRoute(builder: (context) => OnboardingView());
     default:
       return MaterialPageRoute(builder: (context) => Container());
   }

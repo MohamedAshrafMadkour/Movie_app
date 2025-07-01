@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:movie_app/core/utils/assets.dart';
+import 'package:movie_app/core/utils/styles.dart';
+import 'package:movie_app/features/on_boarding/presentation/view/onboarding_view.dart';
+import 'package:movie_app/generated/l10n.dart';
+
+class SplashViewBody extends StatefulWidget {
+  const SplashViewBody({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> {
+  @override
+  void initState() {
+    executionNavigation();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+
+      children: [
+        SizedBox(height: MediaQuery.of(context).size.height * .4),
+        Center(child: SvgPicture.asset(Assets.imagesMovieIcon)),
+        SizedBox(height: 8),
+        Text(S.of(context).main, style: Styles.textBold30),
+        SizedBox(height: MediaQuery.of(context).size.height * .3),
+        Text(
+          textAlign: TextAlign.end,
+          'V1.00',
+          style: Styles.textSemiBold14.copyWith(color: Colors.white),
+        ),
+      ],
+    );
+  }
+
+  void executionNavigation() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+    });
+  }
+}
