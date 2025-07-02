@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:movie_app/core/helper/on_generated_method.dart';
+import 'package:movie_app/core/services/pref_storage.dart';
 import 'package:movie_app/features/splash/presentation/view/splash_view.dart';
 import 'package:movie_app/generated/l10n.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await PrefStorage.initPrefStorage();
   runApp(const MovieApp());
 }
 

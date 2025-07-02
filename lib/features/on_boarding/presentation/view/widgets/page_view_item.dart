@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/constants/text.dart';
+import 'package:movie_app/core/services/pref_storage.dart';
 import 'package:movie_app/core/utils/styles.dart';
-import 'package:movie_app/features/Auth/presentation/view/register_view.dart';
+import 'package:movie_app/features/Auth/presentation/view/login_view.dart';
 import 'package:movie_app/features/on_boarding/data/model/page_view_item_model.dart';
 import 'package:movie_app/features/on_boarding/presentation/view/widgets/custom_button.dart';
 
@@ -57,7 +59,8 @@ class PageViewItem extends StatelessWidget {
         curve: Curves.linear,
       );
     } else if (pageController.page == 2) {
-      Navigator.pushReplacementNamed(context, RegisterView.routeName);
+      PrefStorage.setBool(TextConstant.setOnboarding, true);
+      Navigator.pushReplacementNamed(context, LoginView.routeName);
     }
   }
 }

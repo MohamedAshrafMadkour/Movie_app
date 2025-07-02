@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:movie_app/core/constants/text.dart';
+import 'package:movie_app/core/services/pref_storage.dart';
 import 'package:movie_app/core/utils/assets.dart';
 import 'package:movie_app/core/utils/styles.dart';
+import 'package:movie_app/features/Auth/presentation/view/login_view.dart';
 import 'package:movie_app/features/on_boarding/presentation/view/onboarding_view.dart';
 import 'package:movie_app/generated/l10n.dart';
 
@@ -40,8 +43,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void executionNavigation() {
+    bool isOnboarding = PrefStorage.getBool(TextConstant.setOnboarding);
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+      if (isOnboarding) {
+        Navigator.pushNamed(context, LoginView.routeName);
+      } else {
+        Navigator.pushNamed(context, OnboardingView.routeName);
+      }
     });
   }
 }
