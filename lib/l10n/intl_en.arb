@@ -1,4 +1,7 @@
 {
     "main": "Streamview",
-    "hello2": "Hello from Flutter 2"
+    "onboardingCustomButton1": "continue",
+    "onboardingCustomButton2": "continue",
+    "onboardingCustomButton3": "Get Started"
+
 }

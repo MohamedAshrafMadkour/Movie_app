@@ -22,7 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "hello2": MessageLookupByLibrary.simpleMessage("Hello from Flutter 2"),
     "main": MessageLookupByLibrary.simpleMessage("Streamview"),
+    "onboardingCustomButton1": MessageLookupByLibrary.simpleMessage("continue"),
+    "onboardingCustomButton2": MessageLookupByLibrary.simpleMessage("continue"),
+    "onboardingCustomButton3": MessageLookupByLibrary.simpleMessage(
+      "Get Started",
+    ),
   };
 }

@@ -59,11 +59,31 @@ class S {
     return Intl.message('Streamview', name: 'main', desc: '', args: []);
   }
 
-  /// `Hello from Flutter 2`
-  String get hello2 {
+  /// `continue`
+  String get onboardingCustomButton1 {
     return Intl.message(
-      'Hello from Flutter 2',
-      name: 'hello2',
+      'continue',
+      name: 'onboardingCustomButton1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `continue`
+  String get onboardingCustomButton2 {
+    return Intl.message(
+      'continue',
+      name: 'onboardingCustomButton2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Started`
+  String get onboardingCustomButton3 {
+    return Intl.message(
+      'Get Started',
+      name: 'onboardingCustomButton3',
       desc: '',
       args: [],
     );
