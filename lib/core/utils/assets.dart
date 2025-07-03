@@ -10,9 +10,25 @@ class Assets {
   /// assets/images/arrow-left.svg
   static const String imagesArrowLeft = "assets/images/arrow-left.svg";
 
+  /// Assets for imagesCheck
+  /// assets/images/check.svg
+  static const String imagesCheck = "assets/images/check.svg";
+
+  /// Assets for imagesEyeSlash
+  /// assets/images/eye-slash.svg
+  static const String imagesEyeSlash = "assets/images/eye-slash.svg";
+
+  /// Assets for imagesFacebook
+  /// assets/images/facebook.svg
+  static const String imagesFacebook = "assets/images/facebook.svg";
+
   /// Assets for imagesFrame
   /// assets/images/frame.png
   static const String imagesFrame = "assets/images/frame.png";
+
+  /// Assets for imagesGoogleIcon
+  /// assets/images/google_icon.svg
+  static const String imagesGoogleIcon = "assets/images/google_icon.svg";
 
   /// Assets for imagesMovieIcon
   /// assets/images/movie_icon.svg
