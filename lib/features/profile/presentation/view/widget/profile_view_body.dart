@@ -62,7 +62,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
               ),
               SizedBox(height: MediaQuery.sizeOf(context).height * .4),
               CustomButton(
-                title: 'Create Pin',
+                title: 'SaveAndContinue',
                 onPressed: () {
                   if (fileImage != null) {
                     if (formKey.currentState!.validate()) {
@@ -81,12 +81,6 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                 },
               ),
               SizedBox(height: 24),
-              Text(
-                'Without Pin',
-                style: Styles.textSemiBold16.copyWith(
-                  color: AppColors.kPrimaryColor,
-                ),
-              ),
             ],
           ),
         ),

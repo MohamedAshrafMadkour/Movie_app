@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/features/Auth/presentation/view/login_view.dart';
 import 'package:movie_app/features/Auth/presentation/view/register_view.dart';
+import 'package:movie_app/features/main/presentation/view/main_view.dart';
 import 'package:movie_app/features/on_boarding/presentation/view/onboarding_view.dart';
 import 'package:movie_app/features/profile/presentation/view/profile_view.dart';
 import 'package:movie_app/features/ready/presentation/view/ready_view.dart';
@@ -18,6 +19,8 @@ MaterialPageRoute onGeneratedRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => LoginView());
     case ProfileView.routeName:
       return MaterialPageRoute(builder: (context) => ProfileView());
+    case MainView.routeName:
+      return MaterialPageRoute(builder: (context) => MainView());
     case ReadyView.routeName:
       return MaterialPageRoute(builder: (context) => ReadyView());
     default:
