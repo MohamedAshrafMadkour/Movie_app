@@ -88,4 +88,12 @@ class AuthService {
       facebookAuthCredential,
     )).user!;
   }
+
+  Future deleteUser() async {
+    await FirebaseAuth.instance.currentUser!.delete();
+  }
+
+  static bool isLogin() {
+    return FirebaseAuth.instance.currentUser != null;
+  }
 }

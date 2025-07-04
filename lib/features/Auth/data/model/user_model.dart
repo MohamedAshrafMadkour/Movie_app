@@ -22,11 +22,11 @@ class UserModel extends UserEntity {
 
   factory UserModel.fromFirebaseUser(User user) {
     return UserModel(
-      email: user.email ?? " ",
-      name: user.displayName ?? " ",
+      email: user.email ?? '',
+      name: user.displayName ?? '',
       uid: user.uid,
-      image: user.photoURL ?? " ",
-      birthday: "",
+      image: user.photoURL ?? '',
+      birthday: '',
     );
   }
 
@@ -42,11 +42,11 @@ class UserModel extends UserEntity {
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
-      uid: json['uid'],
-      email: json['email'],
-      name: json['name'],
-      image: json['image'],
-      birthday: json['birthday'],
+      uid: json['uid'] ?? " ",
+      email: json['email'] ?? " ",
+      name: json['name'] ?? " ",
+      image: json['image'] ?? " ",
+      birthday: json['birthday'] ?? " ",
     );
   }
 

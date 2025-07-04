@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/constants/text.dart';
+import 'package:movie_app/core/constants/local_storage_key.dart';
 import 'package:movie_app/core/services/pref_storage.dart';
 import 'package:movie_app/core/utils/styles.dart';
 import 'package:movie_app/features/Auth/presentation/view/login_view.dart';
@@ -59,7 +59,7 @@ class PageViewItem extends StatelessWidget {
         curve: Curves.linear,
       );
     } else if (pageController.page == 2) {
-      PrefStorage.setBool(TextConstant.setOnboarding, true);
+      PrefStorage.setBool(LocalStorageKey.setOnboarding, true);
       Navigator.pushReplacementNamed(context, LoginView.routeName);
     }
   }

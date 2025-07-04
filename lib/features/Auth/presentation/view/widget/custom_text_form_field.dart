@@ -32,9 +32,9 @@ class CustomTextFormField extends StatelessWidget {
       onSaved: onSaved,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(16),
-        border: outlineInputBorder(),
-        enabledBorder: outlineInputBorder(),
-        focusedBorder: outlineInputBorder(),
+        border: outlineInputBorder(const Color(0xFFD9D9D9)),
+        enabledBorder: outlineInputBorder(const Color(0xFFD9D9D9)),
+        focusedBorder: outlineInputBorder(const Color(0xFF49A9E1)),
         suffixIcon: icon,
         suffixIconColor: const Color(0xFFBDBDBD),
         hintText: hintText,
@@ -45,10 +45,11 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder outlineInputBorder() {
+  OutlineInputBorder outlineInputBorder(Color color) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(100),
-      borderSide: BorderSide(width: 1, color: const Color(0xFFD9D9D9)),
+
+      borderSide: BorderSide(width: 1, color: color),
     );
   }
 }

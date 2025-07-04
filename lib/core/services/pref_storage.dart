@@ -14,4 +14,13 @@ class PrefStorage {
     var value = _instance.getBool(key) ?? false;
     return value;
   }
+
+  static void setString(String key, String value) {
+    _instance.setString(key, value);
+  }
+
+  static String getString(String key) {
+    var value = _instance.getString(key) ?? '';
+    return value;
+  }
 }
