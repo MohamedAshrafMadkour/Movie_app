@@ -50,6 +50,14 @@ abstract class Styles {
     letterSpacing: 0.06,
   );
 
+  static const TextStyle textMedium12 = TextStyle(
+    color: Color(0xFF685CF0),
+    fontSize: 12,
+    fontFamily: 'Mulish',
+    fontWeight: FontWeight.w500,
+    height: 1.67,
+    letterSpacing: 0.06,
+  );
   static const TextStyle textSemiBold12 = TextStyle(
     color: Color(0xFF685CF0),
     fontSize: 12,
