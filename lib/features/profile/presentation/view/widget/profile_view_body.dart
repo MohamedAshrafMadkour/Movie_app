@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/constants/size.dart';
 import 'package:movie_app/core/helper/custom_snack_bar.dart';
-import 'package:movie_app/core/utils/app_colors.dart';
 import 'package:movie_app/core/utils/styles.dart';
 import 'package:movie_app/features/Auth/presentation/view/widget/custom_text_form_field.dart';
 import 'package:movie_app/features/on_boarding/presentation/view/widgets/custom_button.dart';

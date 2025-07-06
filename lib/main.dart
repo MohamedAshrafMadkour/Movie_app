@@ -1,8 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:movie_app/core/constants/endpoints.dart';
-import 'package:movie_app/core/constants/supabase_key.dart';
 import 'package:movie_app/core/helper/on_generated_method.dart';
 import 'package:movie_app/core/services/get_it_service.dart';
 import 'package:movie_app/core/services/pref_storage.dart';
