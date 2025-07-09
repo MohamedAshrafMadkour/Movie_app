@@ -9,7 +9,7 @@ class PopularHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Recommended for you', style: Styles.textBold14),
+        Text('Popular Movies', style: Styles.textBold14),
         Text('See All', style: Styles.textMedium12),
       ],
     );

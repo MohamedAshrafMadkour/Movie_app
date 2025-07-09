@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/utils/assets.dart';
+import 'package:movie_app/features/main/data/Model/all_films_model.dart';
+import 'package:movie_app/features/main/presentation/view/details_view.dart';
+import 'package:movie_app/features/main/presentation/view/widget/custom_cached_image.dart';
 
 class PopularItem extends StatefulWidget {
-  const PopularItem({super.key});
-
+  const PopularItem({super.key, required this.movie});
+  final AllFilmsModel movie;
   @override
   State<PopularItem> createState() => _PopularItemState();
 }
@@ -21,12 +23,19 @@ class _PopularItemState extends State<PopularItem> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _toggleExpand,
-
+      onDoubleTap: () {
+        Navigator.pushNamed(context, DetailsView.routeName);
+      },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: Stack(
           children: [
-            Image.asset(Assets.imagesShowman1, fit: BoxFit.fill),
+            Positioned.fill(
+              child: CustomCachedNetworkImage(
+                image:
+                    "https://image.tmdb.org/t/p/w500/${widget.movie.posterPath}",
+              ),
+            ),
             Container(color: const Color.fromRGBO(0, 0, 0, 0.5)),
             AnimatedPositioned(
               duration: const Duration(milliseconds: 150),
@@ -48,12 +57,16 @@ class _PopularItemState extends State<PopularItem> {
                   children: [
                     AnimatedCrossFade(
                       firstChild: const SizedBox.shrink(),
-                      secondChild: Text(
-                        "anonymous meal name",
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
+                      secondChild: FittedBox(
+                        child: Text(
+                          widget.movie.originalTitle ?? "anonymous movie",
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                       crossFadeState: _expanded
@@ -64,12 +77,15 @@ class _PopularItemState extends State<PopularItem> {
                     const SizedBox(height: 4),
                     AnimatedCrossFade(
                       firstChild: const SizedBox.shrink(),
-                      secondChild: Text(
-                        "Romance, Drama",
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                      secondChild: FittedBox(
+                        child: Text(
+                          overflow: TextOverflow.ellipsis,
+                          widget.movie.title ?? "anonymous movie",
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                       crossFadeState: _expanded

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:movie_app/core/constants/endpoints.dart';
-import 'package:movie_app/core/error/server_failure.dart';
+import 'package:movie_app/core/error/failure.dart';
 import 'package:movie_app/core/services/storage_service.dart';
 import 'package:movie_app/features/profile/domain/repo/image_repo.dart';
 

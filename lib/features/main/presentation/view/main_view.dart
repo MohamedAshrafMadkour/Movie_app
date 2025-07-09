@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/features/main/domain/entity/custom_home_app_bar.dart';
 import 'package:movie_app/features/main/presentation/view/widget/bottom_nav_bar.dart';
 import 'package:movie_app/features/main/presentation/view/widget/home_section.dart';
 import 'package:movie_app/features/main/presentation/view/widget/profile_section.dart';

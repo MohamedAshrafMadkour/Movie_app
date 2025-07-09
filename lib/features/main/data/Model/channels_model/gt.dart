@@ -1,0 +1,31 @@
+import 'package:equatable/equatable.dart';
+
+import 'buy.dart';
+import 'rent.dart';
+
+class Gt extends Equatable {
+  final String? link;
+  final List<Buy>? buy;
+  final List<Rent>? rent;
+
+  const Gt({this.link, this.buy, this.rent});
+
+  factory Gt.fromJson(Map<String, dynamic> json) => Gt(
+    link: json['link'] as String?,
+    buy: (json['buy'] as List<dynamic>?)
+        ?.map((e) => Buy.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    rent: (json['rent'] as List<dynamic>?)
+        ?.map((e) => Rent.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'link': link,
+    'buy': buy?.map((e) => e.toJson()).toList(),
+    'rent': rent?.map((e) => e.toJson()).toList(),
+  };
+
+  @override
+  List<Object?> get props => [link, buy, rent];
+}

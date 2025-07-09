@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:movie_app/core/constants/local_storage_key.dart';
+import 'package:movie_app/core/constants/keys.dart';
 import 'package:movie_app/core/services/auth_service.dart';
 import 'package:movie_app/core/services/pref_storage.dart';
 import 'package:movie_app/core/utils/assets.dart';
@@ -46,11 +46,11 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void executionNavigation() {
-    bool isOnboarding = PrefStorage.getBool(LocalStorageKey.setOnboarding);
+    bool isOnboarding = PrefStorage.getBool(AllKeys.setOnboarding);
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnboarding) {
         if (AuthService.isLogin()) {
-          if (PrefStorage.getBool(LocalStorageKey.setProfile)) {
+          if (PrefStorage.getBool(AllKeys.setProfile)) {
             Navigator.pushNamed(context, ReadyView.routeName);
           } else {
             Navigator.pushNamed(context, ProfileView.routeName);

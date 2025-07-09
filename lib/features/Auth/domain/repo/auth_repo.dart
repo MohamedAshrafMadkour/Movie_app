@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:movie_app/core/error/server_failure.dart';
+import 'package:movie_app/core/error/failure.dart';
 import 'package:movie_app/features/Auth/domain/entity/user_entity.dart';
 
 abstract class AuthRepo {

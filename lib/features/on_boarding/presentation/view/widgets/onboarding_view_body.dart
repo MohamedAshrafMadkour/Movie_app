@@ -23,6 +23,12 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
   }
 
   @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),

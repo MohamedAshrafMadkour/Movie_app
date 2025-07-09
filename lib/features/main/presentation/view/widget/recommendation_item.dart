@@ -1,37 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/utils/assets.dart';
 import 'package:movie_app/core/utils/styles.dart';
+import 'package:movie_app/features/main/data/Model/all_films_model.dart';
+import 'package:movie_app/features/main/presentation/view/details_view.dart';
+import 'package:movie_app/features/main/presentation/view/widget/custom_cached_image.dart';
 
 class RecommendationItem extends StatelessWidget {
-  const RecommendationItem({super.key});
-
+  const RecommendationItem({super.key, required this.movies});
+  final AllFilmsModel movies;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset(Assets.imagesShowman, fit: BoxFit.fill),
-          SizedBox(height: 6),
-          SizedBox(
-            width: 125,
-            child: Text(
-              'the greatest showman',
-              style: Styles.textBold14,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, DetailsView.routeName, arguments: movies);
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * .22,
+              child: CustomCachedNetworkImage(
+                image: "https://image.tmdb.org/t/p/w500/${movies.posterPath}",
+              ),
             ),
-          ),
-          SizedBox(height: 6),
-          Text(
-            'Romance, Drama',
-            style: Styles.textRegular10,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ],
+            SizedBox(height: 6),
+            FittedBox(
+              child: Text(
+                movies.originalTitle ?? "anonymous movie",
+                style: Styles.textBold14,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            SizedBox(height: 6),
+            FittedBox(
+              child: Text(
+                movies.title ?? "anonymous movie",
+                style: Styles.textRegular12,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

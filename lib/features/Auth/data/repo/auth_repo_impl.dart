@@ -4,9 +4,9 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:movie_app/core/constants/endpoints.dart';
-import 'package:movie_app/core/constants/local_storage_key.dart';
+import 'package:movie_app/core/constants/keys.dart';
 import 'package:movie_app/core/error/exception.dart';
-import 'package:movie_app/core/error/server_failure.dart';
+import 'package:movie_app/core/error/failure.dart';
 import 'package:movie_app/core/services/auth_service.dart';
 import 'package:movie_app/core/services/database.dart';
 import 'package:movie_app/core/services/pref_storage.dart';
@@ -124,7 +124,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<void> saveData({required UserEntity userEntity}) async {
     var jsonData = jsonEncode(UserModel.fromEntity(userEntity).toJson());
-    PrefStorage.setString(LocalStorageKey.setDataUser, jsonData);
+    PrefStorage.setString(AllKeys.setDataUser, jsonData);
     log("userData: $jsonData");
   }
 }

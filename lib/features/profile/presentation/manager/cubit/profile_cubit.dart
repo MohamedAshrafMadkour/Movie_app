@@ -14,18 +14,22 @@ class ProfileCubit extends Cubit<ProfileState> {
   Future<void> uploadImageAndUpdateName(File file, String name) async {
     emit(ProfileLoading());
     final result = await imageRepo.uploadImage(file);
-    result.fold((l) => emit(ProfileFailure(message: l.message)), (
-      success,
-    ) async {
-      final uid = getUser().uid;
-      final result = await profileRepo.updateUserdata(
-        uid: uid,
-        name: name,
-        imageUrl: success,
-      );
-      result.fold((l) => emit(ProfileFailure(message: l.message)), (r) {
-        emit(ProfileSuccess());
-      });
-    });
+    result.fold(
+      (failure) => emit(ProfileFailure(message: failure.errorMessage)),
+      (success) async {
+        final uid = getUser().uid;
+        final result = await profileRepo.updateUserdata(
+          uid: uid,
+          name: name,
+          imageUrl: success,
+        );
+        result.fold(
+          (failure) => emit(ProfileFailure(message: failure.errorMessage)),
+          (r) {
+            emit(ProfileSuccess());
+          },
+        );
+      },
+    );
   }
 }

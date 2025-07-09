@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:movie_app/core/constants/endpoints.dart';
-import 'package:movie_app/core/error/server_failure.dart';
+import 'package:movie_app/core/error/failure.dart';
 import 'package:movie_app/core/services/database.dart';
 import 'package:movie_app/features/profile/domain/repo/profile_repo.dart';
 

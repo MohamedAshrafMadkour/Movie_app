@@ -27,4 +27,3 @@ class _CustomLoadingState extends State<CustomLoading>
     );
   }
 }
-

@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:movie_app/core/helper/custom_app_bar.dart';
+import 'package:movie_app/core/utils/app_colors.dart';
+import 'package:movie_app/core/utils/assets.dart';
+import 'package:movie_app/core/utils/styles.dart';
+import 'package:movie_app/features/main/data/Model/review_model/review_model.dart';
+import 'package:movie_app/features/main/presentation/view/widget/all_content_review.dart';
+import 'package:movie_app/features/main/presentation/view/widget/custom_cached_image.dart';
+
+class ReviewItem extends StatelessWidget {
+  const ReviewItem({super.key, required this.reviewModel});
+  final ReviewModel reviewModel;
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      contentPadding: const EdgeInsets.all(0),
+      leading: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 40,
+            height: 40,
+            child: CustomCachedNetworkImageProfile(
+              image:
+                  "https://image.tmdb.org/t/p/w500/${reviewModel.authorDetails?.avatarPath}",
+            ),
+          ),
+        ],
+      ),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(reviewModel.author ?? " ", style: Styles.textSemiBold14),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+
+            children: [
+              SizedBox(
+                width: 16,
+                height: 16,
+                child: SvgPicture.asset(Assets.imagesStar),
+              ),
+              SizedBox(width: 4),
+              Text(
+                reviewModel.authorDetails?.rating.toString() ?? " ",
+                style: Styles.textBold12.copyWith(
+                  color: const Color(0xFF191D31),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+      subtitle: Column(
+        children: [
+          SizedBox(height: 8),
+          Text(
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
+            reviewModel.content ?? " ",
+            style: Styles.textRegular12.copyWith(
+              color: const Color(0xFFA7AEC1),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  AllContentReview.routeName,
+                  arguments: reviewModel.content,
+                );
+              },
+              child: Text(
+                'More',
+                style: Styles.textRegular12.copyWith(
+                  color: AppColors.kPrimaryColor,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

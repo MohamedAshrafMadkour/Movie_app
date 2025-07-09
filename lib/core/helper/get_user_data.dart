@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:movie_app/core/constants/local_storage_key.dart';
+import 'package:movie_app/core/constants/keys.dart';
 import 'package:movie_app/core/services/pref_storage.dart';
 import 'package:movie_app/features/Auth/data/model/user_model.dart';
 
 UserModel getUser() {
-  final userData = PrefStorage.getString(LocalStorageKey.setDataUser);
+  final userData = PrefStorage.getString(AllKeys.setDataUser);
   if (userData.trim().isEmpty) {
     return UserModel(birthday: '', email: '', image: '', name: '', uid: '');
   }
