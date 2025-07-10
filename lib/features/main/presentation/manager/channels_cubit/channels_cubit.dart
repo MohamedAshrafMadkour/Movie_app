@@ -9,12 +9,20 @@ class ChannelsCubit extends Cubit<ChannelsState> {
   ChannelsCubit(this.mainRepo) : super(ChannelsInitial());
   final MainRepo mainRepo;
 
-  Future<void> fetchChannels({required int id}) async {
+  Future<void> fetchChannels({
+    required int id,
+    required String countryCode,
+  }) async {
     emit(ChannelsLoading());
     final result = await mainRepo.fetchAllChannel(id: id);
+
     result.fold(
-      (failure) => emit(ChannelsFailure(message: failure.errorMessage)),
-      (success) => emit(ChannelsSuccess(channels: success)),
+      (failure) {
+        emit(ChannelsFailure(message: failure.errorMessage));
+      },
+      (success) {
+        emit(ChannelsSuccess(channels: success));
+      },
     );
   }
 }

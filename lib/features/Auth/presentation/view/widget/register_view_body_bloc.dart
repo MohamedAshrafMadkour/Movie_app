@@ -16,7 +16,7 @@ class RegisterViewBodyBloc extends StatelessWidget {
         if (state is RegisterSuccess) {
           Navigator.pushNamed(context, LoginView.routeName);
         } else if (state is RegisterFailure) {
-          customSnackBar(context, state.message);
+          customSnackBar(context, state.message, isError: true);
           CustomLoading();
         }
       },
@@ -25,11 +25,7 @@ class RegisterViewBodyBloc extends StatelessWidget {
           children: [
             const RegisterViewBody(),
             if (state is RegisterLoading)
-              Positioned(
-                bottom: MediaQuery.sizeOf(context).height * .38,
-                left: MediaQuery.sizeOf(context).width * .35,
-                child: const CustomLoading(),
-              ),
+              Positioned.fill(child: const CustomLoading()),
           ],
         );
       },

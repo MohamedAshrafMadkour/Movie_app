@@ -14,7 +14,7 @@ class TrailerCubit extends Cubit<TrailerState> {
     final result = await mainRepo.fetchTrailer(id: id);
     result.fold(
       (failure) => emit(TrailerFailure(message: failure.errorMessage)),
-      (success) => emit(TrailerSuccess(trailers: success)),
+      (success) => emit(TrailerSuccess(trailer: success)),
     );
   }
 }

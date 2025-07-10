@@ -18,7 +18,7 @@ class ProfileViewBodyBloc extends StatelessWidget {
           PrefStorage.setBool(AllKeys.setProfile, true);
           Navigator.pushNamed(context, ReadyView.routeName);
         } else if (state is ProfileFailure) {
-          customSnackBar(context, state.message);
+          customSnackBar(context, state.message, isError: true);
         } else if (state is ProfileLoading) {
           const Center(child: CircularProgressIndicator());
         }

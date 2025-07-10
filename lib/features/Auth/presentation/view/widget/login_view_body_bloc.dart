@@ -16,7 +16,7 @@ class LoginViewBodyBloc extends StatelessWidget {
         if (state is LoginSuccess) {
           Navigator.pushNamed(context, ProfileView.routeName);
         } else if (state is LoginFailure) {
-          customSnackBar(context, state.message);
+          customSnackBar(context, state.message, isError: true);
         }
       },
       builder: (context, state) {
@@ -24,11 +24,7 @@ class LoginViewBodyBloc extends StatelessWidget {
           children: [
             LoginViewBody(),
             if (state is LoginLoading)
-              Positioned(
-                bottom: MediaQuery.sizeOf(context).height * .3,
-                left: MediaQuery.sizeOf(context).width * .35,
-                child: const CustomLoading(),
-              ),
+              Positioned.fill(child: const CustomLoading()),
           ],
         );
       },

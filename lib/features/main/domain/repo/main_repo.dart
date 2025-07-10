@@ -15,7 +15,7 @@ abstract class MainRepo {
 
   Future<Either<Failure, List<ReviewModel>>> fetchAllReview({required int id});
 
-  Future<Either<Failure, List<TrailerModel>>> fetchTrailer({required int id});
+  Future<Either<Failure, TrailerModel>> fetchTrailer({required int id});
 
   Future<Either<Failure, ChannelsModel>> fetchAllChannel({required int id});
 

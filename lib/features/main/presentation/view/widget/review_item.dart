@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:movie_app/core/helper/custom_app_bar.dart';
 import 'package:movie_app/core/utils/app_colors.dart';
 import 'package:movie_app/core/utils/assets.dart';
 import 'package:movie_app/core/utils/styles.dart';
 import 'package:movie_app/features/main/data/Model/review_model/review_model.dart';
 import 'package:movie_app/features/main/presentation/view/widget/all_content_review.dart';
 import 'package:movie_app/features/main/presentation/view/widget/custom_cached_image.dart';
+import 'package:shimmer/shimmer.dart';
 
 class ReviewItem extends StatelessWidget {
   const ReviewItem({super.key, required this.reviewModel});
@@ -85,6 +85,57 @@ class ReviewItem extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ReviewItemShimmer extends StatelessWidget {
+  const ReviewItemShimmer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      contentPadding: const EdgeInsets.all(0),
+      leading: Shimmer.fromColors(
+        baseColor: Colors.grey[300]!,
+        highlightColor: Colors.grey[100]!,
+        child: Container(
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.circle,
+          ),
+        ),
+      ),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          shimmerBox(width: 100, height: 14),
+          shimmerBox(width: 40, height: 14),
+        ],
+      ),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 8),
+          shimmerBox(width: double.infinity, height: 12),
+          const SizedBox(height: 4),
+          shimmerBox(width: double.infinity, height: 12),
+          const SizedBox(height: 4),
+          shimmerBox(width: 80, height: 12),
+          const SizedBox(height: 6),
+          shimmerBox(width: 40, height: 12),
+        ],
+      ),
+    );
+  }
+
+  Widget shimmerBox({required double width, required double height}) {
+    return Shimmer.fromColors(
+      baseColor: Colors.grey[300]!,
+      highlightColor: Colors.grey[100]!,
+      child: Container(width: width, height: height, color: Colors.white),
     );
   }
 }

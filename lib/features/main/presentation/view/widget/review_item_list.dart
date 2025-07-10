@@ -37,8 +37,14 @@ class _ReviewItemListState extends State<ReviewItemList> {
         } else if (state is FetchReviewsFailure) {
           return SliverToBoxAdapter(child: Center(child: Text(state.message)));
         } else {
-          return const SliverToBoxAdapter(
-            child: Center(child: CircularProgressIndicator()),
+          return SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => const Padding(
+                padding: EdgeInsets.only(bottom: 16),
+                child: ReviewItemShimmer(),
+              ),
+              childCount: 10,
+            ),
           );
         }
       },

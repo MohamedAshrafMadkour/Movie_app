@@ -40,8 +40,8 @@ class AuthRepoImpl extends AuthRepo {
         name: user.displayName ?? " ",
         image: user.photoURL ?? " ",
       );
-      addData(userEntity: userEntity);
-      saveData(userEntity: userEntity);
+      await addData(userEntity: userEntity);
+      await saveData(userEntity: userEntity);
       return Right(userEntity);
     } on AuthException catch (e) {
       await deleteUser(user);
@@ -59,7 +59,9 @@ class AuthRepoImpl extends AuthRepo {
   }) async {
     try {
       var user = await authService.loginIn(email: email, password: password);
-      return Right(UserModel.fromFirebaseUser(user));
+      var userEntity = await fetchData(uid: user.uid);
+      await saveData(userEntity: userEntity);
+      return Right(userEntity);
     } on AuthException catch (e) {
       return Left(ServerFailure(message: e.message));
     }
@@ -126,5 +128,21 @@ class AuthRepoImpl extends AuthRepo {
     var jsonData = jsonEncode(UserModel.fromEntity(userEntity).toJson());
     PrefStorage.setString(AllKeys.setDataUser, jsonData);
     log("userData: $jsonData");
+  }
+
+  @override
+  Future<Either<Failure, void>> updatePassword({
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    try {
+      await authService.updatePassword(
+        currentPassword: currentPassword,
+        newPassword: newPassword,
+      );
+      return right(null);
+    } catch (e) {
+      return left(ServerFailure(message: 'opps something went wrong'));
+    }
   }
 }

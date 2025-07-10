@@ -73,7 +73,15 @@ class _CategoryItemListState extends State<CategoryItemList> {
         } else if (state is FetchAndSearchCategoryFailure) {
           return Center(child: Text(state.message));
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return Expanded(
+            child: ListView.builder(
+              itemCount: 6,
+              itemBuilder: (context, index) => const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: CategoryItemShimmer(),
+              ),
+            ),
+          );
         }
       },
     );

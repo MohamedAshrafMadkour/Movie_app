@@ -28,7 +28,10 @@ class Rent extends Equatable {
   };
 
   @override
-  List<Object?> get props {
-    return [logoPath, providerId, providerName, displayPriority];
-  }
+  List<Object?> get props => [
+    logoPath,
+    providerId,
+    providerName,
+    displayPriority,
+  ];
 }

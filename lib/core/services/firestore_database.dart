@@ -19,6 +19,7 @@ class FirestoreDatabase extends DatabaseService {
   @override
   Future fetchData({required String path, required String document}) async {
     var data = await firestore.collection(path).doc(document).get();
+
     return data.data();
   }
 

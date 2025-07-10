@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movie_app/core/constants/size.dart';
+import 'package:movie_app/core/helper/custom_dialog.dart';
 import 'package:movie_app/core/utils/assets.dart';
 import 'package:movie_app/core/utils/styles.dart';
-import 'package:movie_app/features/Auth/presentation/manager/register_cubit/register_cubit.dart';
 import 'package:movie_app/features/Auth/presentation/view/widget/birthday_form_field.dart';
 import 'package:movie_app/features/Auth/presentation/view/widget/custom_password_field.dart';
 import 'package:movie_app/features/Auth/presentation/view/widget/custom_terms.dart';
 import 'package:movie_app/features/Auth/presentation/view/widget/custom_text_form_field.dart';
+import 'package:movie_app/features/main/presentation/view/widget/legal_section.dart';
 import 'package:movie_app/features/on_boarding/presentation/view/widgets/custom_button.dart';
 
 class RegisterViewBody extends StatefulWidget {
@@ -133,14 +133,25 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 ],
               ),
               SizedBox(height: MediaQuery.sizeOf(context).height * .15),
-              CustomTerms(),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, LegalSection.routeName);
+                },
+                child: CustomTerms(),
+              ),
               SizedBox(height: 16),
               CustomButton(
                 title: 'Agree and continue',
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    customDialog(context);
+                    customRegisterDialog(
+                      context,
+                      email: email,
+                      password: password,
+                      birthday: birthday,
+                      confirmPassword: confirmPassword,
+                    );
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {});
@@ -151,54 +162,6 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
           ),
         ),
       ),
-    );
-  }
-
-  Future<dynamic> customDialog(BuildContext context) {
-    final registerCubit = context.read<RegisterCubit>();
-    return showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return BlocProvider.value(
-          value: registerCubit,
-          child: AlertDialog(
-            elevation: 0,
-            backgroundColor: Colors.white,
-            title: Text(
-              'Terms and Conditions',
-              style: TextStyle(color: Colors.black),
-            ),
-            content: Text(
-              'Do you accept the terms and conditions?',
-              style: TextStyle(color: Colors.black),
-            ),
-            actions: <Widget>[
-              TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.red),
-                child: Text('Cancel', style: TextStyle(color: Colors.white)),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.lightBlueAccent,
-                ),
-                child: Text('Accept', style: TextStyle(color: Colors.white)),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  registerCubit.register(
-                    email: email,
-                    password: password,
-                    birthday: birthday,
-                    confirmPassword: confirmPassword,
-                  );
-                },
-              ),
-            ],
-          ),
-        );
-      },
     );
   }
 }

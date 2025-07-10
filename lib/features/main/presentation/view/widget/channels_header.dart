@@ -7,7 +7,7 @@ class ChannelsHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Reviews',
+      'Channels',
       style: Styles.textBold14.copyWith(color: const Color(0xFF191D31)),
     );
   }

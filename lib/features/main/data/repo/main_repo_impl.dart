@@ -77,6 +77,8 @@ class MainRepoImpl extends MainRepo {
     required int id,
   }) async {
     try {
+      //https://api.themoviedb.org/3/movie/500/watch/providers?api_key=638cd2a08d9cca6ac125679db7d7adf3
+
       var response = await apiService.get(
         endPoint: '$id/watch/providers',
         queryParameters: {'api_key': apiKey},
@@ -110,9 +112,7 @@ class MainRepoImpl extends MainRepo {
   }
 
   @override
-  Future<Either<Failure, List<TrailerModel>>> fetchTrailer({
-    required int id,
-  }) async {
+  Future<Either<Failure, TrailerModel>> fetchTrailer({required int id}) async {
     try {
       //'https://api.themoviedb.org/3/movie/'
       //https://api.themoviedb.org/3/movie/500/videos?api_key=638cd2a08d9cca6ac125679db7d7adf3
@@ -120,11 +120,9 @@ class MainRepoImpl extends MainRepo {
         endPoint: '$id/videos?',
         queryParameters: {'api_key': apiKey},
       );
-      List<TrailerModel> trailers = [];
-      for (var item in response['results']) {
-        trailers.add(TrailerModel.fromJson(item));
-      }
-      return Right(trailers);
+
+      final model = TrailerModel.fromJson(response);
+      return Right(model);
     } on ServerFailure catch (e) {
       return Left(ServerFailure(message: e.toString()));
     }

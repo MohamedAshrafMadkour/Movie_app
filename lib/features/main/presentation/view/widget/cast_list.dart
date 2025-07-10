@@ -37,7 +37,15 @@ class _CastListState extends State<CastList> {
         } else if (state is CastFailure) {
           return Center(child: Text(state.message));
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return SizedBox(
+            height: MediaQuery.sizeOf(context).height * .06,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemCount: 5,
+              separatorBuilder: (_, __) => const SizedBox(width: 24),
+              itemBuilder: (context, index) => const CastItemShimmer(),
+            ),
+          );
         }
       },
     );

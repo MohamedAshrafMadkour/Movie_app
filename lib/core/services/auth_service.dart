@@ -89,6 +89,27 @@ class AuthService {
     )).user!;
   }
 
+  Future updatePassword({
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      final email = user?.email;
+      if (email == null) throw AuthException(message: 'Email not found');
+
+      final credential = EmailAuthProvider.credential(
+        email: email,
+        password: currentPassword,
+      );
+      await user!.reauthenticateWithCredential(credential);
+
+      await user.updatePassword(newPassword);
+    } on FirebaseAuthException catch (e) {
+      throw AuthException(message: e.message ?? ' opps something went wrong');
+    }
+  }
+
   Future deleteUser() async {
     await FirebaseAuth.instance.currentUser!.delete();
   }

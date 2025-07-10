@@ -41,13 +41,14 @@ class _ProfileImageState extends State<ProfileImage> {
           setState(() {});
         },
         child: Stack(
-          clipBehavior: Clip.none,
           children: [
             fileImage != null
                 ? Container(
                     height: 150,
                     width: 150,
-                    decoration: ShapeDecoration(shape: OvalBorder()),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                    ),
                     child: Image.file(fileImage!),
                   )
                 : SvgPicture.asset(Assets.imagesUser, height: 100, width: 100),

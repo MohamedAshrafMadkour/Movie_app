@@ -26,3 +26,30 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+class CustomCountryButton extends StatelessWidget {
+  const CustomCountryButton({super.key, required this.title, this.onPressed});
+  final String title;
+  final void Function()? onPressed;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width * .3,
+      height: 50,
+      child: TextButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.kPrimaryColor,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(100)),
+          ),
+        ),
+        onPressed: onPressed,
+        child: Text(
+          title,
+          textAlign: TextAlign.center,
+          style: Styles.textSemiBold16,
+        ),
+      ),
+    );
+  }
+}

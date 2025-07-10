@@ -36,6 +36,9 @@ void getItSetup() {
     MainRepoImpl(apiService: getIt<ApiService>()),
   );
   getIt.registerSingleton<ProfileRepo>(
-    ProfileRepoImpl(databaseService: getIt<DatabaseService>()),
+    ProfileRepoImpl(
+      databaseService: getIt<DatabaseService>(),
+      getIt<AuthRepo>(),
+    ),
   );
 }

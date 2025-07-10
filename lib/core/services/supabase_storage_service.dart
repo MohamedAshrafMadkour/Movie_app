@@ -30,14 +30,16 @@ class SupabaseStorageService extends StorageService {
 
   @override
   Future<String> uploadFile(File file, String path) async {
-    var baseName = b.basename(file.path);
-    var extension = b.extension(file.path);
-    await _supabase.client.storage
+    final fileName =
+        '${DateTime.now().millisecondsSinceEpoch}${b.extension(file.path)}';
+    final filePath = '$path/$fileName';
+
+    await _supabase.client.storage.from('images').upload(filePath, file);
+
+    final signedUrl = await _supabase.client.storage
         .from('images')
-        .upload('$path/$baseName.$extension', file);
-    var url = _supabase.client.storage
-        .from('images')
-        .getPublicUrl('$path/$baseName.$extension');
-    return url;
+        .createSignedUrl(filePath, 60 * 60 * 24);
+
+    return signedUrl;
   }
 }

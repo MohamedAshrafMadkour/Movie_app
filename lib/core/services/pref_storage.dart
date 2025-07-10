@@ -23,4 +23,12 @@ class PrefStorage {
     var value = _instance.getString(key) ?? '';
     return value;
   }
+
+  static void remove(String key) {
+    _instance.remove(key);
+  }
+
+  static void clear() {
+    _instance.clear();
+  }
 }

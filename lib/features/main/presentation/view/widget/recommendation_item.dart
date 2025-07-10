@@ -19,7 +19,11 @@ class RecommendationItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey[300]!,
+                borderRadius: BorderRadius.circular(16),
+              ),
               height: MediaQuery.sizeOf(context).height * .22,
               child: CustomCachedNetworkImage(
                 image: "https://image.tmdb.org/t/p/w500/${movies.posterPath}",

@@ -1,20 +1,40 @@
- {
-            "adult": false,
-            "backdrop_path": "/rthMuZfFv4fqEU4JVbgSW9wQ8rs.jpg",
-            "genre_ids": [
-                28,
-                878,
-                12
+
+    {
+        "AO": {
+            "link": "https://www.themoviedb.org/movie/500-reservoir-dogs/watch?locale=AO",
+            "flatrate": [
+                {
+                    "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+                    "provider_id": 119,
+                    "provider_name": "Amazon Prime Video",
+                    "display_priority": 1
+                }
+            ]
+        },
+        "AR": {
+            "link": "https://www.themoviedb.org/movie/500-reservoir-dogs/watch?locale=AR",
+            "buy": [
+                {
+                    "logo_path": "/9ghgSC0MA082EL6HLCW3GalykFD.jpg",
+                    "provider_id": 2,
+                    "provider_name": "Apple TV",
+                    "display_priority": 3
+                }
             ],
-            "id": 986056,
-            "original_language": "en",
-            "original_title": "Thunderbolts*",
-            "overview": "بعد أن وجدوا أنفسهم محاصرين في فخ الموت، يجب على سبعة من المنبوذين المحبطين الشروع في مهمة خطيرة ستجبرهم على مواجهة أظلم زوايا ماضيهم.",
-            "popularity": 602.2079,
-            "poster_path": "/j7roy1LJdx9hK3Jh8s2F1inqoqL.jpg",
-            "release_date": "2025-04-30",
-            "title": "الصواعق*",
-            "video": false,
-            "vote_average": 7.442,
-            "vote_count": 1631
-        }
+            "rent": [
+                {
+                    "logo_path": "/9ghgSC0MA082EL6HLCW3GalykFD.jpg",
+                    "provider_id": 2,
+                    "provider_name": "Apple TV",
+                    "display_priority": 3
+                }
+            ],
+            "flatrate": [
+                {
+                    "logo_path": "/tRNA2CRgA4XHvd7Mx9dH3sFtDVb.jpg",
+                    "provider_id": 339,
+                    "provider_name": "MovistarTV",
+                    "display_priority": 8
+                }
+            ]
+        }}

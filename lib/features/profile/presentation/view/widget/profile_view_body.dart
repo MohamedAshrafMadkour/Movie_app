@@ -1,12 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/constants/size.dart';
+import 'package:movie_app/core/helper/custom_snack_bar.dart';
 import 'package:movie_app/core/utils/styles.dart';
 import 'package:movie_app/features/Auth/presentation/view/widget/custom_text_form_field.dart';
 import 'package:movie_app/features/on_boarding/presentation/view/widgets/custom_button.dart';
+import 'package:movie_app/features/profile/presentation/manager/cubit/profile_cubit.dart';
 import 'package:movie_app/features/profile/presentation/view/widget/image_profile.dart';
-import 'package:movie_app/features/ready/presentation/view/ready_view.dart';
 
 class ProfileViewBody extends StatefulWidget {
   const ProfileViewBody({super.key});
@@ -64,18 +66,20 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                   if (fileImage != null) {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      // context.read<ProfileCubit>().uploadImageAndUpdateName(
-                      //   fileImage!,
-                      //   name,
-                      // );
-                      Navigator.pushNamed(context, ReadyView.routeName);
+                      context.read<ProfileCubit>().uploadImageAndUpdateName(
+                        fileImage!,
+                        name,
+                      );
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
                     }
                   } else {
-                    // customSnackBar(context, 'Please select image');
-                    Navigator.pushNamed(context, ReadyView.routeName);
+                    customSnackBar(
+                      context,
+                      'Please select image',
+                      isError: true,
+                    );
                   }
                 },
               ),
