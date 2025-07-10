@@ -29,8 +29,8 @@ class MovieApp extends StatelessWidget {
         fontFamily: 'Mulish',
         scaffoldBackgroundColor: Colors.white,
       ),
-      locale: Locale('en'),
-      localizationsDelegates: [
+      locale: const Locale('en'),
+      localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
