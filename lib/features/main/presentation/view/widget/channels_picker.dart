@@ -33,7 +33,7 @@ class CountryPicker {
       ),
       builder: (_) {
         return SizedBox(
-          height: 400,
+          height: MediaQuery.sizeOf(context).height * .5,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: GridView.builder(
@@ -56,9 +56,7 @@ class CountryPicker {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Theme.of(context).brightness == Brightness.light
-                          ? Colors.grey.shade200
-                          : Colors.grey.shade800,
+                      color: Colors.grey.shade200,
                     ),
                     padding: const EdgeInsets.all(8),
                     child: Column(
