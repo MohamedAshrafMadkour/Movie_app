@@ -1,16 +1,33 @@
-# movie_app
+# 🎬 Movie App
 
-A new Flutter project.
+**Movie App** is a powerful Flutter-based application that allows users to browse movies, view trailers, read reviews, check cast information, explore watch providers, and more — all using a clean and modern UI.
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+- 🔍 **Search movies** by title with real-time filtering.
+- 🎥 **Watch trailers** inside the app using `youtube_player_flutter`.
+- 👥 **View cast** and crew information.
+- 📝 **Read reviews** from users and critics.
+- 📺 **Check watch channels** and open them via device browser using `url_launcher`.
+- 🗂️ **Browse movies by category**.
+- 🔐 **Authentication** using:
+  - Google
+  - Facebook
+  - Email & Password
+- ☁️ **User data storage** using **Firebase Firestore**.
+- 🖼️ **Upload profile images** via **Supabase Storage** and link them to Firestore.
+- 🎭 **Animations and loading indicators** using `shimmer`, `flutter_spinkit`, etc.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🧑‍💻 Technologies & Tools
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter** + **Dart**
+- **Firebase** (Auth + Firestore)
+- **Supabase** (Image Storage)
+- **Cubit (Bloc)** for state management
+- **Shared Preferences** for local caching
+- **youtube_player_flutter** for video playback
+- **url_launcher** to open external links
+- **image_picker** for image selection
+- **MVVM Architecture**
