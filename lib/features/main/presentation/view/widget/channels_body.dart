@@ -16,7 +16,7 @@ class ChannelsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ChannelsCubit(getIt.get<MainRepo>()),
-      child: ChannelsBodyOverAll(),
+      child: const ChannelsBodyOverAll(),
     );
   }
 }
@@ -45,7 +45,7 @@ class _ChannelsBodyOverAllState extends State<ChannelsBodyOverAll> {
       padding: const EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(child: ChannelsHeader()),
+          const SliverToBoxAdapter(child: ChannelsHeader()),
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.only(bottom: 16, top: 16),

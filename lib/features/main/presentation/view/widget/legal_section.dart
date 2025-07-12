@@ -11,7 +11,7 @@ class LegalSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(context, 'Legal Section'),
-      body: LegalSectionBody(),
+      body: const LegalSectionBody(),
     );
   }
 }
@@ -21,7 +21,7 @@ class LegalSectionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         SizedBox(height: 20),
         CustomDivider(),

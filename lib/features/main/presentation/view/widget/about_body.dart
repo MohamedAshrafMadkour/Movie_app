@@ -15,7 +15,7 @@ class AboutBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CastCubit(getIt.get<MainRepo>()),
-      child: AboutBodyOverAll(),
+      child: const AboutBodyOverAll(),
     );
   }
 }
@@ -25,11 +25,11 @@ class AboutBodyOverAll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
+          padding: EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

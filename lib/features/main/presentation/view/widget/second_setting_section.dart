@@ -18,7 +18,7 @@ class SecondSettingSection extends StatelessWidget {
             Navigator.pushNamed(context, LegalSection.routeName);
           },
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         SettingsListTile(
           setting: SettingModel.generateHelp[1],
           onTap: () {
@@ -33,7 +33,7 @@ class SecondSettingSection extends StatelessWidget {
             customDialog(context);
           },
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
       ],
     );
   }

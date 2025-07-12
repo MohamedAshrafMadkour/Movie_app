@@ -14,12 +14,12 @@ class UpdatingPasswordCubit extends Cubit<UpdatingPasswordState> {
     required String confirmPassword,
   }) async {
     if (newPassword.length < 8) {
-      emit(UpdatingPasswordFailure(message: 'Password too short'));
+      emit(const UpdatingPasswordFailure(message: 'Password too short'));
       return;
     }
 
     if (newPassword != confirmPassword) {
-      emit(UpdatingPasswordFailure(message: 'Passwords do not match'));
+      emit(const UpdatingPasswordFailure(message: 'Passwords do not match'));
       return;
     }
 

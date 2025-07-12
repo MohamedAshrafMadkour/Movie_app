@@ -49,8 +49,8 @@ class _PopularItemState extends State<PopularItem> {
                 ),
                 decoration: BoxDecoration(
                   color: _expanded
-                      ? Color.fromRGBO(0, 0, 0, .7)
-                      : Color.fromRGBO(0, 0, 0, .4),
+                      ? const Color.fromRGBO(0, 0, 0, .7)
+                      : const Color.fromRGBO(0, 0, 0, .4),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

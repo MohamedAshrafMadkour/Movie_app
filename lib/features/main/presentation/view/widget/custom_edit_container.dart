@@ -18,10 +18,10 @@ class CustomEditContainer extends StatelessWidget {
       decoration: ShapeDecoration(
         color: const Color(0xFFFEFEFE),
         shape: RoundedRectangleBorder(
-          side: BorderSide(
+          side: const BorderSide(
             width: 1,
             strokeAlign: BorderSide.strokeAlignCenter,
-            color: const Color(0xFFE1E1E2),
+            color: Color(0xFFE1E1E2),
           ),
           borderRadius: BorderRadius.circular(15),
         ),
@@ -29,11 +29,11 @@ class CustomEditContainer extends StatelessWidget {
       child: Row(
         children: [
           SvgPicture.asset(image),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Text(
             text,
-            style: TextStyle(
-              color: const Color(0xFF111111),
+            style: const TextStyle(
+              color: Color(0xFF111111),
               fontSize: 16,
               fontFamily: 'Outfit',
               fontWeight: FontWeight.w500,

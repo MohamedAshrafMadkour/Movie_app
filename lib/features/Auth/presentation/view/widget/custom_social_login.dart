@@ -28,7 +28,7 @@ class CustomSocialLogin extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(image),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Text(
               title,
               textAlign: TextAlign.center,

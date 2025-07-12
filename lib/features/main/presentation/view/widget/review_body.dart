@@ -12,7 +12,7 @@ class ReviewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ReviewsCubit(getIt.get<MainRepo>()),
-      child: ReviewBodyOverAll(),
+      child: const ReviewBodyOverAll(),
     );
   }
 }

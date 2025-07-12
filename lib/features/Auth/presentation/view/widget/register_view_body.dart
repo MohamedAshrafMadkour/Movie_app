@@ -63,7 +63,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   color: const Color(0xFF34363E),
                 ),
               ),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               CustomTextFormField(
                 hintText: 'Example',
                 keyboardType: TextInputType.emailAddress,
@@ -71,14 +71,14 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   email = value!;
                 },
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Text(
                 'Birthday',
                 style: Styles.textRegular10.copyWith(
                   color: const Color(0xFF34363E),
                 ),
               ),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               BirthdayFormField(
                 controller: _birthdayController,
                 hintStyle: Styles.textRegular12.copyWith(color: Colors.black),
@@ -90,38 +90,38 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   birthday = value!;
                 },
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Text(
                 'Password',
                 style: Styles.textRegular10.copyWith(
                   color: const Color(0xFF34363E),
                 ),
               ),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               CustomPasswordField(
                 onSaved: (value) {
                   password = value!;
                 },
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Text(
                 'Confirm Password',
                 style: Styles.textRegular10.copyWith(
                   color: const Color(0xFF34363E),
                 ),
               ),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               CustomPasswordField(
                 onSaved: (value) {
                   confirmPassword = value!;
                 },
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SvgPicture.asset(Assets.imagesCheck, height: 18, width: 18),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       'Password must be at least 8 character, uppercase, lowercase, and unique code like #%!',
@@ -137,9 +137,9 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 onTap: () {
                   Navigator.pushNamed(context, LegalSection.routeName);
                 },
-                child: CustomTerms(),
+                child: const CustomTerms(),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               CustomButton(
                 title: 'Agree and continue',
                 onPressed: () {

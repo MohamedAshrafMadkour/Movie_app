@@ -13,64 +13,64 @@ class EditProfileSectionBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 20),
-        CustomDivider(),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
+        const CustomDivider(),
+        const SizedBox(height: 20),
         SizedBox(
           height: MediaQuery.sizeOf(context).height * .15,
           width: MediaQuery.sizeOf(context).width * .3,
 
           child: CustomCachedNetworkImageProfile(image: getUser().image ?? ""),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Username',
                 style: TextStyle(
-                  color: const Color(0xFF111111),
+                  color: Color(0xFF111111),
                   fontSize: 16,
                   fontFamily: 'Outfit',
                   fontWeight: FontWeight.w500,
                   height: 1.30,
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               CustomEditContainer(
                 text: getUser().name ?? "",
                 image: Assets.imagesProfile,
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Email',
                 style: TextStyle(
-                  color: const Color(0xFF111111),
+                  color: Color(0xFF111111),
                   fontSize: 16,
                   fontFamily: 'Outfit',
                   fontWeight: FontWeight.w500,
                   height: 1.30,
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               CustomEditContainer(
                 text: getUser().email,
                 image: Assets.imagesSms,
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Birthday',
                 style: TextStyle(
-                  color: const Color(0xFF111111),
+                  color: Color(0xFF111111),
                   fontSize: 16,
                   fontFamily: 'Outfit',
                   fontWeight: FontWeight.w500,
                   height: 1.30,
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               CustomEditContainer(
                 text: getUser().birthday ?? "",
                 image: Assets.imagesProfile,

@@ -41,7 +41,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   color: const Color(0xFF34363E),
                 ),
               ),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               CustomTextFormField(
                 hintText: 'example@example.com',
                 keyboardType: TextInputType.emailAddress,
@@ -49,20 +49,20 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   email = value!;
                 },
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Text(
                 'Password',
                 style: Styles.textRegular10.copyWith(
                   color: const Color(0xFF34363E),
                 ),
               ),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               CustomPasswordField(
                 onSaved: (value) {
                   password = value!;
                 },
               ),
-              SizedBox(height: 28),
+              const SizedBox(height: 28),
               CustomButton(
                 title: 'Continue',
                 onPressed: () {
@@ -78,7 +78,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   }
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Center(
                 child: Text(
                   'Forgot Password?',
@@ -87,9 +87,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   ),
                 ),
               ),
-              SizedBox(height: 28),
-              OrDivider(),
-              SizedBox(height: 28),
+              const SizedBox(height: 28),
+              const OrDivider(),
+              const SizedBox(height: 28),
               CustomSocialLogin(
                 title: 'Continue with Google',
                 image: Assets.imagesGoogleIcon,
@@ -97,7 +97,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   context.read<LoginCubit>().loginWithGoogle();
                 },
               ),
-              SizedBox(height: 18),
+              const SizedBox(height: 18),
               CustomSocialLogin(
                 title: 'Continue with Facebook',
                 image: Assets.imagesFacebook,
@@ -105,8 +105,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   context.read<LoginCubit>().loginWithFacebook();
                 },
               ),
-              SizedBox(height: 43),
-              Center(child: DontHaveAnyAccount()),
+              const SizedBox(height: 43),
+              const Center(child: DontHaveAnyAccount()),
             ],
           ),
         ),

@@ -22,5 +22,5 @@ class CustomPageView extends StatelessWidget {
 }
 
 List<Widget> getPages(PageController pageController) {
-  return [AboutBody(), ReviewBody(), ChannelsBody()];
+  return [const AboutBody(), const ReviewBody(), const ChannelsBody()];
 }

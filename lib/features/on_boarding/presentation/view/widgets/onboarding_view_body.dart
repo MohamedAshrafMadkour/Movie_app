@@ -31,14 +31,14 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
+      padding: const EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
       child: Column(
         children: [
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Expanded(
             child: OnboardingPageViewList(pageController: pageController),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           CustomDotsIndicator(
             currentPage: currentPage,
             pageController: pageController,
@@ -46,12 +46,12 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
 
           Visibility(
             visible: currentPage == 2,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 36),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 36),
               child: Text(
                 'Sign In',
                 style: TextStyle(
-                  color: const Color(0xFF7D7E83),
+                  color: Color(0xFF7D7E83),
                   fontSize: 16,
                   fontFamily: 'Mulish',
                   fontWeight: FontWeight.w600,

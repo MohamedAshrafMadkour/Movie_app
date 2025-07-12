@@ -28,7 +28,7 @@ class CastItem extends StatelessWidget {
               image: 'https://image.tmdb.org/t/p/w500/${castModel.profilePath}',
             ),
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Text(
             castModel.name ?? "anonymous actor ",
             style: Styles.textSemiBold12.copyWith(
@@ -63,7 +63,7 @@ class CastItemShimmer extends StatelessWidget {
             Container(
               width: 36,
               height: 36,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white,
               ),

@@ -22,9 +22,9 @@ class LoginViewBodyBloc extends StatelessWidget {
       builder: (context, state) {
         return Stack(
           children: [
-            LoginViewBody(),
+            const LoginViewBody(),
             if (state is LoginLoading)
-              Positioned.fill(child: const CustomLoading()),
+              const Positioned.fill(child: CustomLoading()),
           ],
         );
       },

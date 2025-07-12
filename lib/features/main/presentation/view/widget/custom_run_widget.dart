@@ -24,7 +24,7 @@ class CustomRunWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(Assets.imagesVideoCircle, height: 20, width: 20),
-            SizedBox(width: 8),
+            const SizedBox(width: 8),
             Text(
               'Play',
               style: Styles.textSemiBold14.copyWith(color: Colors.white),

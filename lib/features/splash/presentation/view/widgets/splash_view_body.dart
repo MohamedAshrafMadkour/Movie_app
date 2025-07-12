@@ -29,7 +29,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * .4),
         Center(child: SvgPicture.asset(Assets.imagesMovieIcon)),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(S.of(context).main, style: Styles.textBold30),
         SizedBox(height: MediaQuery.of(context).size.height * .3),
         Text(

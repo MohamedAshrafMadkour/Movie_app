@@ -20,7 +20,7 @@ class CustomHomeAppBar extends StatelessWidget {
         ),
       ),
       title: Text('Hi, ${getUser().name}', style: Styles.textBold14),
-      subtitle: Text('Let\'s watch a movie', style: Styles.textRegular12),
+      subtitle: const Text('Let\'s watch a movie', style: Styles.textRegular12),
       trailing: SvgPicture.asset(Assets.imagesUnActiveUnactiveSearch),
     );
   }

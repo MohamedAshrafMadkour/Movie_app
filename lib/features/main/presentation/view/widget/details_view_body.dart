@@ -43,12 +43,12 @@ class _DetailsViewBodyState extends State<DetailsViewBody> {
           child: SizedBox(
             height: MediaQuery.of(context).size.height * .4,
             width: double.infinity,
-            child: CustomPostwarData(),
+            child: const CustomPostwarData(),
           ),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         TapListHeader(pageController: pageController),
-        SizedBox(height: 24),
+        const SizedBox(height: 24),
         Expanded(child: CustomPageView(pageController: pageController)),
       ],
     );

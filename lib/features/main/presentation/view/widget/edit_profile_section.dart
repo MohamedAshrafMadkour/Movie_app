@@ -9,7 +9,7 @@ class EditProfileSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(context, 'Edit Profile'),
-      body: EditProfileSectionBody(),
+      body: const EditProfileSectionBody(),
     );
   }
 }

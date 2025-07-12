@@ -15,7 +15,7 @@ class RegisterView extends StatelessWidget {
       create: (context) => RegisterCubit(getIt<AuthRepo>()),
       child: Scaffold(
         appBar: customAppBar(context, 'Sign Up'),
-        body: RegisterViewBodyBloc(),
+        body: const RegisterViewBodyBloc(),
       ),
     );
   }

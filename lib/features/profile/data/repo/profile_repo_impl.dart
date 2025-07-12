@@ -34,7 +34,7 @@ class ProfileRepoImpl extends ProfileRepo {
         ),
       );
 
-      return Right(null);
+      return const Right(null);
     } on Exception catch (e) {
       return Left(ServerFailure(message: e.toString()));
     }

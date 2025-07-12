@@ -13,7 +13,7 @@ class ProfileSection extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFFFFFFF),
       appBar: customAppBar(context, 'Settings'),
-      body: ProfileSectionBody(),
+      body: const ProfileSectionBody(),
     );
   }
 }
@@ -23,13 +23,13 @@ class ProfileSectionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 16),
         CustomDivider(),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
+          padding: EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -37,7 +37,7 @@ class ProfileSectionBody extends StatelessWidget {
               Text(
                 'General',
                 style: TextStyle(
-                  color: const Color(0xFF111111),
+                  color: Color(0xFF111111),
                   fontSize: 18,
                   fontFamily: 'Outfit',
                   fontWeight: FontWeight.w600,
@@ -48,7 +48,7 @@ class ProfileSectionBody extends StatelessWidget {
               Text(
                 'Preferences',
                 style: TextStyle(
-                  color: const Color(0xFF111111),
+                  color: Color(0xFF111111),
                   fontSize: 18,
                   fontFamily: 'Outfit',
                   fontWeight: FontWeight.w600,

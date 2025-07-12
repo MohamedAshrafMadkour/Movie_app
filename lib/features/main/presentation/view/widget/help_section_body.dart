@@ -38,10 +38,10 @@ class _HelpSectionBodyState extends State<HelpSectionBody> {
             ],
           ),
           isExpended
-              ? Text(
+              ? const Text(
                   'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
                   style: TextStyle(
-                    color: const Color(0xFF6C6C6C),
+                    color: Color(0xFF6C6C6C),
                     fontSize: 14,
                     fontFamily: 'Outfit',
                     fontWeight: FontWeight.w400,
@@ -50,12 +50,12 @@ class _HelpSectionBodyState extends State<HelpSectionBody> {
                 )
               : Container(
                   width: 327,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
                         width: 1,
                         strokeAlign: BorderSide.strokeAlignCenter,
-                        color: const Color(0xFFE3E7EB),
+                        color: Color(0xFFE3E7EB),
                       ),
                     ),
                   ),

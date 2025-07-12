@@ -20,7 +20,7 @@ class DetailsView extends StatelessWidget {
         appBar: customAppBar(context, 'Details'),
         body: Provider<AllFilmsModel>.value(
           value: model,
-          child: DetailsViewBodyBloc(),
+          child: const DetailsViewBodyBloc(),
         ),
       ),
     );
@@ -32,6 +32,6 @@ class DetailsViewBodyBloc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DetailsViewBody();
+    return const DetailsViewBody();
   }
 }

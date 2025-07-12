@@ -25,7 +25,7 @@ class CustomDotsIndicator extends StatelessWidget {
         );
       },
       decorator: DotsDecorator(
-        color: Color(0xFFE1E1E2),
+        color: const Color(0xFFE1E1E2),
         activeColor: AppColors.kPrimaryColor,
         size: const Size(6, 6),
         activeSize: const Size(24.0, 6.0),

@@ -17,7 +17,7 @@ class UpdatingPasswordSection extends StatelessWidget {
       create: (context) => UpdatingPasswordCubit(getIt.get<AuthRepo>()),
       child: Scaffold(
         appBar: customAppBar(context, 'Updating Password'),
-        body: UpdatingPasswordSectionBodyBloc(),
+        body: const UpdatingPasswordSectionBodyBloc(),
       ),
     );
   }
@@ -35,10 +35,10 @@ class UpdatingPasswordSectionBodyBloc extends StatelessWidget {
         } else if (state is UpdatingPasswordFailure) {
           customSnackBar(context, state.message);
         } else if (state is UpdatingPasswordLoading) {
-          CustomLoading();
+          const CustomLoading();
         }
       },
-      child: UpdatingPasswordSectionBody(),
+      child: const UpdatingPasswordSectionBody(),
     );
   }
 }

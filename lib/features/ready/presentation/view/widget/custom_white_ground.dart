@@ -10,8 +10,8 @@ class CustomWhiteGround extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment(0.50, -0.00),
-            end: Alignment(0.50, 1.20),
+            begin: const Alignment(0.50, -0.00),
+            end: const Alignment(0.50, 1.20),
             colors: [
               Colors.white.withValues(alpha: 0),
               Colors.white.withValues(alpha: 0.30),

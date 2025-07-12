@@ -13,7 +13,7 @@ class HomeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => FetchAllMoviesCubit(getIt.get<MainRepo>()),
-      child: HomeSectionBody(),
+      child: const HomeSectionBody(),
     );
   }
 }

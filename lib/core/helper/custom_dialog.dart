@@ -15,11 +15,11 @@ Future<void> customDialog(BuildContext context) {
         elevation: 8,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           'Logout Confirmation',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
-        content: Text(
+        content: const Text(
           'Are you sure you want to log out?',
           style: TextStyle(color: Colors.black87),
         ),
@@ -71,18 +71,21 @@ Future<dynamic> customRegisterDialog(
         child: AlertDialog(
           elevation: 0,
           backgroundColor: Colors.white,
-          title: Text(
+          title: const Text(
             'Terms and Conditions',
             style: TextStyle(color: Colors.black),
           ),
-          content: Text(
+          content: const Text(
             'Do you accept the terms and conditions?',
             style: TextStyle(color: Colors.black),
           ),
           actions: <Widget>[
             TextButton(
               style: TextButton.styleFrom(backgroundColor: Colors.red),
-              child: Text('Cancel', style: TextStyle(color: Colors.white)),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(color: Colors.white),
+              ),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -91,7 +94,10 @@ Future<dynamic> customRegisterDialog(
               style: TextButton.styleFrom(
                 backgroundColor: Colors.lightBlueAccent,
               ),
-              child: Text('Accept', style: TextStyle(color: Colors.white)),
+              child: const Text(
+                'Accept',
+                style: TextStyle(color: Colors.white),
+              ),
               onPressed: () {
                 Navigator.of(context).pop();
                 registerCubit.register(

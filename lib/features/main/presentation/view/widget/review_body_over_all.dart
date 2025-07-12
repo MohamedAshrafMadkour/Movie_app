@@ -8,18 +8,18 @@ class ReviewBodyOverAll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: AppSize.kHorizontal),
       child: CustomScrollView(
         slivers: [
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [ReviewHeader(), SizedBox(height: 8)],
             ),
           ),
 
-          const ReviewItemList(),
+          ReviewItemList(),
         ],
       ),
     );

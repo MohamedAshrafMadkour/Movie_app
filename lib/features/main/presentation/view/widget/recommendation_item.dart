@@ -29,7 +29,7 @@ class RecommendationItem extends StatelessWidget {
                 image: "https://image.tmdb.org/t/p/w500/${movies.posterPath}",
               ),
             ),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             FittedBox(
               child: Text(
                 movies.originalTitle ?? "anonymous movie",
@@ -38,7 +38,7 @@ class RecommendationItem extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             FittedBox(
               child: Text(
                 movies.title ?? "anonymous movie",

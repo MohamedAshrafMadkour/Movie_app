@@ -23,8 +23,8 @@ class _UpdatingPasswordSectionBodyState
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 20),
-        CustomDivider(),
+        const SizedBox(height: 20),
+        const CustomDivider(),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(
@@ -37,58 +37,58 @@ class _UpdatingPasswordSectionBodyState
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       'Current Password',
                       style: TextStyle(
-                        color: const Color(0xFF111111),
+                        color: Color(0xFF111111),
                         fontSize: 16,
                         fontFamily: 'Outfit',
                         fontWeight: FontWeight.w500,
                         height: 1.30,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     CustomPasswordField(
                       onSaved: (value) {
                         currentPassword = value!;
                       },
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       'New Password',
                       style: TextStyle(
-                        color: const Color(0xFF111111),
+                        color: Color(0xFF111111),
                         fontSize: 16,
                         fontFamily: 'Outfit',
                         fontWeight: FontWeight.w500,
                         height: 1.30,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     CustomPasswordField(
                       onSaved: (value) {
                         password = value!;
                       },
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       'Confirm New Password',
                       style: TextStyle(
-                        color: const Color(0xFF111111),
+                        color: Color(0xFF111111),
                         fontSize: 16,
                         fontFamily: 'Outfit',
                         fontWeight: FontWeight.w500,
                         height: 1.30,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     CustomPasswordField(
                       onSaved: (value) {
                         confirmPassword = value!;
                       },
                     ),
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     CustomButton(
                       title: 'Change Now',
                       onPressed: () {

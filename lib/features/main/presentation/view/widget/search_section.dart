@@ -18,7 +18,7 @@ class SearchSection extends StatelessWidget {
       create: (context) => FetchAndSearchCategoryCubit(getIt.get<MainRepo>()),
       child: Scaffold(
         appBar: customAppBar(context, 'Search'),
-        body: SearchViewBody(),
+        body: const SearchViewBody(),
       ),
     );
   }
@@ -78,12 +78,12 @@ class _SearchViewBodyState extends State<SearchViewBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: SearchTextField(onChanged: searchAboutItem),
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         CategoryList(
           onCategorySelected: (index) {
             setState(() {

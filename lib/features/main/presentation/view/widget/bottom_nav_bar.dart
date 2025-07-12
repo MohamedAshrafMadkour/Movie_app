@@ -15,8 +15,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 20),
-      decoration: BoxDecoration(
-        color: const Color(0xFFFEFEFE),
+      decoration: const BoxDecoration(
+        color: Color(0xFFFEFEFE),
         boxShadow: [
           BoxShadow(
             color: Color(0x0F292929),

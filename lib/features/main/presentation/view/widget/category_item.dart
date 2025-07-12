@@ -26,7 +26,7 @@ class CategoryItem extends StatelessWidget {
                   "https://image.tmdb.org/t/p/w500/${categoryModel.posterPath}",
             ),
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,

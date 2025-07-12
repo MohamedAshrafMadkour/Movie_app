@@ -18,8 +18,8 @@ class _CustomLoadingState extends State<CustomLoading>
         color: Colors.white,
       ),
 
-      child: Center(
-        child: const SpinKitFadingCircle(color: Colors.black, size: 40.0),
+      child: const Center(
+        child: SpinKitFadingCircle(color: Colors.black, size: 40.0),
       ),
     );
   }

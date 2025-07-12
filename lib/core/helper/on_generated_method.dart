@@ -17,37 +17,43 @@ import 'package:movie_app/features/splash/presentation/view/splash_view.dart';
 MaterialPageRoute onGeneratedRoute(RouteSettings settings) {
   switch (settings.name) {
     case SplashView.routeName:
-      return MaterialPageRoute(builder: (context) => SplashView());
+      return MaterialPageRoute(builder: (context) => const SplashView());
     case OnboardingView.routeName:
-      return MaterialPageRoute(builder: (context) => OnboardingView());
+      return MaterialPageRoute(builder: (context) => const OnboardingView());
     case RegisterView.routeName:
-      return MaterialPageRoute(builder: (context) => RegisterView());
+      return MaterialPageRoute(builder: (context) => const RegisterView());
     case LoginView.routeName:
-      return MaterialPageRoute(builder: (context) => LoginView());
+      return MaterialPageRoute(builder: (context) => const LoginView());
     case ProfileView.routeName:
-      return MaterialPageRoute(builder: (context) => ProfileView());
+      return MaterialPageRoute(builder: (context) => const ProfileView());
     case UpdatingPasswordSection.routeName:
-      return MaterialPageRoute(builder: (context) => UpdatingPasswordSection());
+      return MaterialPageRoute(
+        builder: (context) => const UpdatingPasswordSection(),
+      );
     case AllContentReview.routeName:
       return MaterialPageRoute(
         builder: (context) =>
             AllContentReview(content: settings.arguments as String),
       );
     case LegalSection.routeName:
-      return MaterialPageRoute(builder: (context) => LegalSection());
+      return MaterialPageRoute(builder: (context) => const LegalSection());
     case EditProfileSection.routeName:
-      return MaterialPageRoute(builder: (context) => EditProfileSection());
+      return MaterialPageRoute(
+        builder: (context) => const EditProfileSection(),
+      );
     case DetailsView.routeName:
       return MaterialPageRoute(
         builder: (context) =>
             DetailsView(model: settings.arguments as AllFilmsModel),
       );
     case HelpAndSupportSection.routeName:
-      return MaterialPageRoute(builder: (context) => HelpAndSupportSection());
+      return MaterialPageRoute(
+        builder: (context) => const HelpAndSupportSection(),
+      );
     case MainView.routeName:
-      return MaterialPageRoute(builder: (context) => MainView());
+      return MaterialPageRoute(builder: (context) => const MainView());
     case ReadyView.routeName:
-      return MaterialPageRoute(builder: (context) => ReadyView());
+      return MaterialPageRoute(builder: (context) => const ReadyView());
     default:
       return MaterialPageRoute(builder: (context) => Container());
   }

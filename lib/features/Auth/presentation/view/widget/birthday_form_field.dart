@@ -43,7 +43,7 @@ class BirthdayFormField extends StatelessWidget {
   OutlineInputBorder outlineInputBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(100),
-      borderSide: BorderSide(width: 1, color: const Color(0xFFD9D9D9)),
+      borderSide: const BorderSide(width: 1, color: Color(0xFFD9D9D9)),
     );
   }
 }

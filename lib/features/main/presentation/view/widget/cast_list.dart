@@ -28,7 +28,7 @@ class _CastListState extends State<CastList> {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Padding(
-                padding: EdgeInsets.only(left: 24),
+                padding: const EdgeInsets.only(left: 24),
                 child: CastItem(castModel: state.casts[index]),
               ),
               itemCount: state.casts.length,

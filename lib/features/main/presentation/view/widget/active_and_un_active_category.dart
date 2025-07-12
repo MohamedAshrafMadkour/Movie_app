@@ -19,7 +19,7 @@ class ActiveAndUnActiveCategory extends StatelessWidget {
           : CrossFadeState.showSecond,
       firstChild: ActiveCategory(category: category),
       secondChild: UnActiveCategory(category: category),
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
   }
 }

@@ -36,18 +36,18 @@ class ReadyViewBody extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
 
                 children: [
-                  Text(
+                  const Text(
                     'Are you ready to watch movies?',
                     textAlign: TextAlign.center,
                     style: Styles.textBold24,
                   ),
-                  SizedBox(height: 16),
-                  Text(
+                  const SizedBox(height: 16),
+                  const Text(
                     'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod ',
                     textAlign: TextAlign.center,
                     style: Styles.textRegular14,
                   ),
-                  SizedBox(height: 48),
+                  const SizedBox(height: 48),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width,
                     child: CustomButton(

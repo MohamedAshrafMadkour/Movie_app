@@ -6,7 +6,7 @@ class RecommendationHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text('Recommended for you', style: Styles.textBold14),

@@ -18,7 +18,7 @@ class ReviewHeader extends StatelessWidget {
         Text(
           'See All',
           textAlign: TextAlign.right,
-          style: Styles.textMedium12.copyWith(color: Color(0xFFE55607)),
+          style: Styles.textMedium12.copyWith(color: const Color(0xFFE55607)),
         ),
       ],
     );

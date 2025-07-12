@@ -16,9 +16,9 @@ class AllContentReview extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 16),
-              Text('All Content', style: Styles.textBold14),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
+              const Text('All Content', style: Styles.textBold14),
+              const SizedBox(height: 16),
               Text(
                 content ?? " ",
                 style: Styles.textRegular12.copyWith(

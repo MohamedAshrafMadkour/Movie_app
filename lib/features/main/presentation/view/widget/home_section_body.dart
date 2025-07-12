@@ -10,21 +10,21 @@ class HomeSectionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(child: CustomHomeAppBar()),
+        SliverToBoxAdapter(child: CustomHomeAppBar()),
         SliverToBoxAdapter(
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: EdgeInsets.symmetric(horizontal: 16),
                 child: RecommendationHeader(),
               ),
               SizedBox(height: 16),
               RecommendationList(),
               SizedBox(height: 16),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: EdgeInsets.symmetric(horizontal: 16),
                 child: PopularHeader(),
               ),
               SizedBox(height: 16),

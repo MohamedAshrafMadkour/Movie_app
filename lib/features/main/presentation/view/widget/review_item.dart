@@ -43,7 +43,7 @@ class ReviewItem extends StatelessWidget {
                 height: 16,
                 child: SvgPicture.asset(Assets.imagesStar),
               ),
-              SizedBox(width: 4),
+              const SizedBox(width: 4),
               Text(
                 reviewModel.authorDetails?.rating.toString() ?? " ",
                 style: Styles.textBold12.copyWith(
@@ -56,7 +56,7 @@ class ReviewItem extends StatelessWidget {
       ),
       subtitle: Column(
         children: [
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
@@ -102,7 +102,7 @@ class ReviewItemShimmer extends StatelessWidget {
         child: Container(
           width: 40,
           height: 40,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             shape: BoxShape.circle,
           ),

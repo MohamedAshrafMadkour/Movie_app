@@ -18,7 +18,7 @@ class ActiveAndUnActiveTab extends StatelessWidget {
           : CrossFadeState.showSecond,
       firstChild: ActiveTab(text: text),
       secondChild: UnActiveTab(text: text),
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
   }
 }

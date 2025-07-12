@@ -8,8 +8,8 @@ class CustomLegalMainText extends StatelessWidget {
     return FittedBox(
       child: Text(
         text,
-        style: TextStyle(
-          color: const Color(0xFF111111),
+        style: const TextStyle(
+          color: Color(0xFF111111),
           fontSize: 16,
           fontFamily: 'Outfit',
           fontWeight: FontWeight.w500,
@@ -29,7 +29,7 @@ class CustomOpacityText extends StatelessWidget {
       opacity: 0.50,
       child: Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
           color: Color(0xFFB0B0B3),
           fontSize: 14,
           fontFamily: 'Outfit',

@@ -3,7 +3,7 @@ import 'package:movie_app/features/main/data/Model/cast_model.dart';
 import 'package:movie_app/features/main/data/Model/category_model.dart';
 
 AllFilmsModel getDummyFilms() {
-  return AllFilmsModel(
+  return const AllFilmsModel(
     id: 1,
     title: 'title',
     overview: 'overview',
@@ -28,7 +28,7 @@ List<AllFilmsModel> getDummyFilmsList() {
 }
 
 CastModel getDummyCast() {
-  return CastModel(
+  return const CastModel(
     id: 1,
     name: 'name',
     character: 'character',
@@ -50,7 +50,7 @@ List<CastModel> getDummyFeaturedProductsList() {
 }
 
 CategoryModel getDummyCategory() {
-  return CategoryModel(
+  return const CategoryModel(
     id: 1,
     title: 'title',
     overview: 'overview',

@@ -33,7 +33,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Center(
                 child: ProfileImage(
                   onImageSelected: (image) {
@@ -41,7 +41,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                   },
                 ),
               ),
-              SizedBox(height: 36),
+              const SizedBox(height: 36),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -51,7 +51,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                   ),
                 ),
               ),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               CustomTextFormField(
                 hintText: 'Name',
                 keyboardType: TextInputType.name,
@@ -83,7 +83,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                   }
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
             ],
           ),
         ),

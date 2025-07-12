@@ -7,12 +7,12 @@ class CustomDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: ShapeDecoration(
+      decoration: const ShapeDecoration(
         shape: RoundedRectangleBorder(
           side: BorderSide(
             width: 1.50,
             strokeAlign: BorderSide.strokeAlignCenter,
-            color: const Color(0xFFE1E1E2),
+            color: Color(0xFFE1E1E2),
           ),
         ),
       ),

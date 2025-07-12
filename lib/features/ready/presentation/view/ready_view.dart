@@ -6,6 +6,6 @@ class ReadyView extends StatelessWidget {
   static const routeName = 'ready_view';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: const ReadyViewBody());
+    return const Scaffold(body: ReadyViewBody());
   }
 }

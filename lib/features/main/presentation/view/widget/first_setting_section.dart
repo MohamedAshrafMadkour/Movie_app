@@ -11,14 +11,14 @@ class FirstSettingSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         SettingsListTile(
           setting: SettingModel.generateSetting[0],
           onTap: () {
             Navigator.pushNamed(context, EditProfileSection.routeName);
           },
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         SettingsListTile(
           setting: SettingModel.generateSetting[1],
           onTap: () {
@@ -26,9 +26,9 @@ class FirstSettingSection extends StatelessWidget {
           },
         ),
 
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         SettingsListTile(setting: SettingModel.generateSetting[2]),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
       ],
     );
   }

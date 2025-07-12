@@ -15,7 +15,7 @@ class LoginView extends StatelessWidget {
       create: (context) => LoginCubit(getIt<AuthRepo>()),
       child: Scaffold(
         appBar: customAppBar(context, 'Sign In'),
-        body: SafeArea(child: LoginViewBodyBloc()),
+        body: const SafeArea(child: LoginViewBodyBloc()),
       ),
     );
   }

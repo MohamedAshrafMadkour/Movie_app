@@ -30,7 +30,7 @@ class _MainViewState extends State<MainView> {
 }
 
 List<Widget> _widgetOptions = <Widget>[
-  HomeSection(),
-  SearchSection(),
-  ProfileSection(),
+  const HomeSection(),
+  const SearchSection(),
+  const ProfileSection(),
 ];

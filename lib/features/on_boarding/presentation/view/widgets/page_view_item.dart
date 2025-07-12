@@ -22,19 +22,19 @@ class PageViewItem extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Center(child: Image.asset(pageViewItemModel.image, fit: BoxFit.fill)),
-        SizedBox(height: 48),
+        const SizedBox(height: 48),
         Text(
           pageViewItemModel.title,
           textAlign: TextAlign.center,
           style: Styles.textBold20,
         ),
-        SizedBox(height: 24),
+        const SizedBox(height: 24),
         Text(
           pageViewItemModel.description,
           textAlign: TextAlign.center,
           style: Styles.textRegular14,
         ),
-        SizedBox(height: 56),
+        const SizedBox(height: 56),
         CustomButton(
           title: pageViewItemModel.buttonTitle,
           onPressed: () {

@@ -32,15 +32,15 @@ class SettingsListTile extends StatelessWidget {
           leading: SvgPicture.asset(setting.image, height: 24, width: 24),
           title: Text(
             setting.title,
-            style: TextStyle(
-              color: const Color(0xFF111111),
+            style: const TextStyle(
+              color: Color(0xFF111111),
               fontSize: 14,
               fontFamily: 'Outfit',
               fontWeight: FontWeight.w500,
               height: 1.30,
             ),
           ),
-          trailing: Icon(Icons.arrow_forward_ios, color: Colors.grey),
+          trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey),
         ),
       ),
     );
